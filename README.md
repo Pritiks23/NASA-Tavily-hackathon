@@ -5,6 +5,9 @@
 ## 🚀 Overview
  Try it out here: https://pritiks23.github.io/NASA-Tavily-hackathon/
 
+ [![Watch the video](https://img.youtube.com/vi/_R4YLjJNWec/0.jpg)](https://www.youtube.com/watch?v=_R4YLjJNWec)
+
+
 NASA News Digest is a fully client-side, statically deployed web application that delivers real-time, topic-specific news summaries on NASA missions, discoveries, and technologies. Built using vanilla HTML, CSS, and JavaScript, and powered by the Tavily Search API, this project demonstrates how to construct a Retrieval-Augmented Generation (RAG)-inspired interface without relying on OpenAI, server infrastructure, or build tooling.
 
 Designed for zero-backend deployment on GitHub Pages, the app prompts users for their Tavily API key at runtime, enabling secure credential handling without hardcoding secrets. It performs authenticated POST requests to Tavily’s `/search` endpoint with `topic="news"` and `time_range="day"` to retrieve fresh, relevant snippets for predefined queries such as “NASA Artemis Program”, “James Webb Discoveries”, and “Mars Missions”. These results are parsed, sanitized, and dynamically injected into the DOM using semantic HTML structure and responsive CSS layout.
