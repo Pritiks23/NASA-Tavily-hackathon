@@ -1,17 +1,15 @@
-const TAVILY_API_KEY = "your_tavily_api_key"; // Replace with your Tavily key
-
 const topics = [
   "NASA Artemis Program",
   "James Webb Discoveries",
   "Mars Missions"
 ];
 
-async function fetchTavilyNews(topic) {
+async function fetchTavilyNews(topic, apiKey) {
   const response = await fetch("https://api.tavily.com/search", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${TAVILY_API_KEY}`
+      "Authorization": `Bearer ${apiKey}`
     },
     body: JSON.stringify({
       query: topic,
@@ -30,14 +28,20 @@ async function fetchTavilyNews(topic) {
   `).join("");
 }
 
-async function loadDigest() {
+async function loadDigest(apiKey) {
   const output = document.getElementById("output");
   output.innerHTML = "";
 
   for (const topic of topics) {
-    const newsHTML = await fetchTavilyNews(topic);
+    const newsHTML = await fetchTavilyNews(topic, apiKey);
     output.innerHTML += `<h2>${topic}</h2>${newsHTML}`;
   }
 }
 
-loadDigest();
+const apiKey = prompt("Please enter your Tavily API key:");
+if (apiKey) {
+  loadDigest(apiKey);
+} else {
+  document.getElementById("output").innerText = "API key is required to fetch news.";
+}
+
