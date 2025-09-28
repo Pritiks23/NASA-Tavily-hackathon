@@ -1,6 +1,9 @@
 # 🛰️ NASA News Digest — Real-Time Space Intelligence via Tavily Search
+<img width="1377" height="820" alt="Screen Shot 2025-09-28 at 10 45 31 AM" src="https://github.com/user-attachments/assets/b82ab092-1383-4213-b31f-c5f173d31094" />
+
 
 ## 🚀 Overview
+ Try it out here: https://pritiks23.github.io/NASA-Tavily-hackathon/
 
 NASA News Digest is a fully client-side, statically deployed web application that delivers real-time, topic-specific news summaries on NASA missions, discoveries, and technologies. Built using vanilla HTML, CSS, and JavaScript, and powered by the Tavily Search API, this project demonstrates how to construct a Retrieval-Augmented Generation (RAG)-inspired interface without relying on OpenAI, server infrastructure, or build tooling.
 
