@@ -1,11 +1,18 @@
-# 🛰️ NASA News Digest — Powered by Tavily
-
-> Real-time NASA intelligence delivered via LLM-optimized search — no backend, no OpenAI, no nonsense.
-
----
+# 🛰️ NASA News Digest — Real-Time Space Intelligence via Tavily Search
 
 ## 🚀 Overview
 
-**NASA News Digest** is a fully client-side, zero-backend web application that fetches and displays real-time NASA-related news using the [Tavily Search API](https://www.tavily.com). Designed for rapid deployment on GitHub Pages, this project demonstrates how to build a Retrieval-Augmented Generation (RAG)-inspired interface using only search snippets — no LLM required.
+NASA News Digest is a fully client-side, statically deployed web application that delivers real-time, topic-specific news summaries on NASA missions, discoveries, and technologies. Built using vanilla HTML, CSS, and JavaScript, and powered by the Tavily Search API, this project demonstrates how to construct a Retrieval-Augmented Generation (RAG)-inspired interface without relying on OpenAI, server infrastructure, or build tooling.
+
+Designed for zero-backend deployment on GitHub Pages, the app prompts users for their Tavily API key at runtime, enabling secure credential handling without hardcoding secrets. It performs authenticated POST requests to Tavily’s `/search` endpoint with `topic="news"` and `time_range="day"` to retrieve fresh, relevant snippets for predefined queries such as “NASA Artemis Program”, “James Webb Discoveries”, and “Mars Missions”. These results are parsed, sanitized, and dynamically injected into the DOM using semantic HTML structure and responsive CSS layout.
+
+This architecture showcases a zero-dependency, zero-server RAG interface that can be extended to support Tavily Extract for full-content retrieval, LangChain for structured output, or GPT-based summarization. It adheres to modern security principles by avoiding persistent secrets and leverages browser-native capabilities for UX and data flow.
 
 ---
+
+## 🧠 Architecture
+
+### System Design
+
+```plaintext
+User → Browser → Tavily API → NASA News → DOM Render
