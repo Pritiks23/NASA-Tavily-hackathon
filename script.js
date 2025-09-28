@@ -33,8 +33,12 @@ async function loadDigest(apiKey) {
   output.innerHTML = "";
 
   for (const topic of topics) {
-    const newsHTML = await fetchTavilyNews(topic, apiKey);
-    output.innerHTML += `<h2>${topic}</h2>${newsHTML}`;
+    try {
+      const newsHTML = await fetchTavilyNews(topic, apiKey);
+      output.innerHTML += `<h2>${topic}</h2>${newsHTML}`;
+    } catch (error) {
+      output.innerHTML += `<h2>${topic}</h2><p>Error fetching news.</p>`;
+    }
   }
 }
 
